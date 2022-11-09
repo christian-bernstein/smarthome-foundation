@@ -34,15 +34,17 @@ publishing {
         maven {
             name = "GitHubPackages"
             url = uri("https://maven.pkg.github.com/christian-bernstein/smarthome-foundation/")
-            // credentials {
-            //     username = project.findProperty("gpr.user") ?: System.getenv("USERNAME")
-            //     password = project.findProperty("gpr.key") ?: System.getenv("TOKEN")
-            // }
+            credentials {
+                username = "christian-bernstein"
+                // TODO: Always check if this the access token is still valid
+                password = System.getenv("github-access-token")
+            }
         }
     }
-    // publications {
-    //     gpr(MavenPublication) {
-    //         from(components.java)
-    //     }
-    // }
+    publications {
+        register<MavenPublication>("gpr") {
+            // TODO: JAVA or kotlin?
+            from(components["java"])
+        }
+    }
 }

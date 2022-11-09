@@ -35,9 +35,9 @@ publishing {
             name = "GitHubPackages"
             url = uri("https://maven.pkg.github.com/christian-bernstein/smarthome-foundation/")
             credentials {
-                username = "christian-bernstein"
                 // TODO: Always check if this the access token is still valid
-                password = System.getenv("github-access-token")
+                username = project.findProperty("gpr.user") as String? ?: "christian-bernstein"
+                password = project.findProperty("gpr.key") as String? ?: System.getenv("github-access-token")
             }
         }
     }

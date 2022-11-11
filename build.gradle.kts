@@ -43,7 +43,8 @@ publishing {
     publications {
         register<MavenPublication>("gpr") {
             // TODO: JAVA or kotlin?
-            from(components["java"])
+            // from(components["java"])
+            from(components["kotlin"])
         }
     }
 }

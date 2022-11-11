@@ -6,7 +6,7 @@ plugins {
     id("maven-publish")
 }
 
-group = "org.example"
+group = "de.christianbernstein.smarthome"
 version = "1.0-SNAPSHOT"
 
 repositories {
